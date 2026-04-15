@@ -50,6 +50,53 @@
             font-style: italic;
         }
 
+        /* ── Bio ── */
+        .bio {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .bio img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .bio-text h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: #111;
+            margin-bottom: 1rem;
+        }
+
+        .bio-text p {
+            font-size: 1.08rem;
+            color: #444;
+            line-height: 1.75;
+        }
+
+        @media (max-width: 680px) {
+            .bio {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 1.25rem 1.5rem;
+            }
+
+            .bio img {
+                max-width: 240px;
+            }
+        }
+
         /* ── Divider ── */
         .divider {
             max-width: 940px;
@@ -184,8 +231,16 @@
 <div class="header">
     <h1>William<br>Chen</h1>
     <p class="tagline">Video Journalism / CINE 366s / Spring 2026</p>
-    <p class="intro">Four projects from a semester spent learning how to tell stories with a camera, a mic, and a deadline.</p>
+    <p class="intro">Junior at Duke. Computer Science major. Journalism this semester.</p>
 </div>
+
+<section class="bio">
+    <img src="photo.png" alt="William Chen">
+    <div class="bio-text">
+        <h2>About Me</h2>
+        <p>I'm a junior at Duke University majoring in Computer Science. This website is a collection of the journalism works I've done this semester for CINE 366s Video Journalism.</p>
+    </div>
+</section>
 
 <div class="divider"><hr></div>
 
@@ -198,7 +253,6 @@
             <div class="video-wrap">
                 <iframe src="https://www.youtube.com/embed/LrUdYtHWQ14" title="VO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="caption">Narration over B-roll — no interviews, just the story and the footage.</p>
         </article>
 
         <article class="project">
@@ -207,7 +261,6 @@
             <div class="video-wrap">
                 <iframe src="https://www.youtube.com/embed/dT-cYbS12pM" title="VOSOT" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="caption">Narration that hands off to a sound bite, then picks back up.</p>
         </article>
 
         <article class="project">
@@ -216,7 +269,6 @@
             <div class="video-wrap">
                 <iframe src="https://www.youtube.com/embed/Z7iFpGSBIh4" title="Social Media Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="caption">Built for the scroll — quick, punchy, made for a phone screen.</p>
         </article>
 
         <article class="project">
@@ -225,7 +277,6 @@
             <div class="placeholder">
                 <span>In production</span>
             </div>
-            <p class="caption">The full thing — stand-ups, interviews, B-roll, narration, all of it.</p>
         </article>
 
     </div>
