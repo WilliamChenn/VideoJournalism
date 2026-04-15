@@ -5,155 +5,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William Chen — Video Journalism</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Serif+4:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #faf9f7;
-            color: #333;
-            line-height: 1.6;
+            background: #f5f3f0;
+            color: #1a1a1a;
+            font-family: 'Source Serif 4', Georgia, serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            padding: 3.5rem 2rem 2.5rem;
-            max-width: 860px;
+        /* ── Header ── */
+        .header {
+            padding: 5rem 2rem 3rem;
+            max-width: 940px;
             margin: 0 auto;
-            border-bottom: 1px solid #ddd;
         }
 
-        header h1 {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 2rem;
-            font-weight: normal;
+        .header h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            line-height: 0.95;
+            color: #111;
+        }
+
+        .header .tagline {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.82rem;
+            color: #888;
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .header .intro {
+            margin-top: 1.5rem;
+            font-size: 1.08rem;
+            color: #444;
+            max-width: 540px;
+            font-style: italic;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .divider hr {
+            border: none;
+            border-top: 2px solid #111;
+        }
+
+        /* ── Projects ── */
+        .projects {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .project {}
+
+        .project h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
             color: #111;
             margin-bottom: 0.25rem;
         }
 
-        header p {
-            color: #666;
-            font-size: 0.95rem;
+        .project .meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.8rem;
         }
 
-        .projects {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 2.5rem 2rem 4rem;
-        }
-
-        .project {
-            margin-bottom: 3.5rem;
-        }
-
-        .project h2 {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 1.35rem;
-            font-weight: normal;
-            color: #111;
-            margin-bottom: 0.3rem;
-        }
-
-        .project p {
-            color: #777;
-            font-size: 0.88rem;
-            margin-bottom: 1rem;
-        }
-
-        .video-wrapper {
+        .video-wrap {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 4px;
-            background: #e8e6e3;
+            background: #ddd;
         }
 
-        .video-wrapper iframe {
+        .video-wrap iframe {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             border: none;
         }
 
+        .project .caption {
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 0.6rem;
+        }
+
+        /* ── Placeholder ── */
         .placeholder {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 4px;
-            background: #e8e6e3;
+            background: #e2e0dc;
         }
 
         .placeholder span {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            color: #aaa;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 2rem;
-            border-top: 1px solid #ddd;
-            color: #999;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.8rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        @media (max-width: 600px) {
-            header { padding: 2.5rem 1.25rem 2rem; }
-            .projects { padding: 2rem 1.25rem 3rem; }
-            header h1 { font-size: 1.6rem; }
+        /* ── Footer ── */
+        footer {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        footer hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        footer p {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: #aaa;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 680px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .header {
+                padding: 3.5rem 1.25rem 2rem;
+            }
+
+            .projects {
+                padding: 2rem 1.25rem;
+            }
+
+            .divider, footer {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>William Chen</h1>
-    <p>Video Journalism Portfolio — CINE 366s, Spring 2026</p>
-</header>
+<div class="header">
+    <h1>William<br>Chen</h1>
+    <p class="tagline">Video Journalism / CINE 366s / Spring 2026</p>
+    <p class="intro">Four projects from a semester spent learning how to tell stories with a camera, a mic, and a deadline.</p>
+</div>
+
+<div class="divider"><hr></div>
 
 <section class="projects">
+    <div class="grid">
 
-    <article class="project">
-        <h2>VO</h2>
-        <p>Voice-over news segment with narration laid over B-roll footage.</p>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/LrUdYtHWQ14" title="VO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </article>
+        <article class="project">
+            <h2>VO</h2>
+            <p class="meta">Voice Over</p>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/LrUdYtHWQ14" title="VO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="caption">Narration over B-roll — no interviews, just the story and the footage.</p>
+        </article>
 
-    <article class="project">
-        <h2>VOSOT</h2>
-        <p>Voice-over that transitions into a sound bite from an interview subject.</p>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/dT-cYbS12pM" title="VOSOT" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </article>
+        <article class="project">
+            <h2>VOSOT</h2>
+            <p class="meta">Voice Over / Sound on Tape</p>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/dT-cYbS12pM" title="VOSOT" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="caption">Narration that hands off to a sound bite, then picks back up.</p>
+        </article>
 
-    <article class="project">
-        <h2>Social Media Story</h2>
-        <p>Short-form video piece produced for social platforms.</p>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/Z7iFpGSBIh4" title="Social Media Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </article>
+        <article class="project">
+            <h2>Social Media Story</h2>
+            <p class="meta">Short-form</p>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/Z7iFpGSBIh4" title="Social Media Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="caption">Built for the scroll — quick, punchy, made for a phone screen.</p>
+        </article>
 
-    <article class="project">
-        <h2>Package</h2>
-        <p>Full news package with stand-ups, interviews, B-roll, and narration.</p>
-        <div class="placeholder">
-            <span>Coming soon</span>
-        </div>
-    </article>
+        <article class="project">
+            <h2>Package</h2>
+            <p class="meta">News Package</p>
+            <div class="placeholder">
+                <span>In production</span>
+            </div>
+            <p class="caption">The full thing — stand-ups, interviews, B-roll, narration, all of it.</p>
+        </article>
 
+    </div>
 </section>
 
 <footer>
-    William Chen &middot; CINE 366s &middot; 2026
+    <hr>
+    <p>William Chen &middot; CINE 366s Video Journalism &middot; 2026</p>
 </footer>
 
 </body>
